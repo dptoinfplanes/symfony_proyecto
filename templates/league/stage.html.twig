@@ -1,0 +1,23 @@
+{# templates/liga/jornada.html.twig #}
+<H1>Jornada</H1>
+
+{{ form(form) }}
+
+<table>
+    <tr>
+        <th>Local</th>
+        <th>Visitante</th>
+        <th></th>
+        <th></th>
+    </tr>
+{% for item in games %}
+    <tr>
+        <td>{{ item.host.team  }}</td>
+        <td>{{ item.guest.team   }}</td>
+        <td>{{ item.scoreHost }}  </td>
+        <td>{{ item.scoreGuest }} </td>
+    </tr>
+{% endfor %}
+</table>
+
+{% include "league/menu.html.twig" %}

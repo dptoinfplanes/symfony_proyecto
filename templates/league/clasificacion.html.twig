@@ -1,0 +1,20 @@
+{# templates/liga/clasificacion.html.twig #}
+
+<h1>Clasificación</h1>
+<table>
+    <tr>
+        <th>Equipo</th>
+        <th>Puntos</th>
+    </tr>
+{% for item in clasificacion %}
+    <tr>
+        <td>{{ item.equipo  }}</td>
+        <td>{{ item.puntos  }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+{% include "league/menu.html.twig" %}
+
+

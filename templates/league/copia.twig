@@ -1,0 +1,45 @@
+{# templates/liga/actualizacion.html.twig #}
+<h1>Actualizacion</h1>
+{# form(form)#}
+
+
+
+
+
+<table>
+    <tr>
+        <th>Local</th>
+        <th></th>
+        <th>Visitante</th>
+        <th></th>
+    </tr>
+{{ form_start(form) }}
+ 
+{% for item in form %}
+   
+    {# Acceso nombreId campo form #}
+    {# item.vars.id #}
+    {%if 'game_host' in item.vars.id   %}
+        <tr>
+    {% endif %}
+    {%if 'game' in item.vars.id   %}
+        <td>{{ form_label(item) }}</td>
+        <td>{{ form_widget(item) }} </td>
+    {% endif %}
+    {%if 'game_guest' in item.vars.id   %}
+            </tr>
+    {% endif %}
+
+                                    
+{% endfor %}
+</table>
+
+{{ form_end(form )}}
+
+<a href="{{ path('league_clasificacion') }}">Clasificacion</a>
+<a href="{{ path('league_stage') }}">Jornada</a>
+<a href="{{ path('league_backend') }}">Backend</a>
+
+
+	
+

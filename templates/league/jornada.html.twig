@@ -1,0 +1,27 @@
+{# templates/liga/jornada.html.twig #}
+<H1>Jornada</H1>
+
+{{ form_start(form) }}
+     {{ form_widget(form.jornada) }} {{ form_widget(form.Send) }}
+{{ form_end(form) }}
+
+<table>
+    <tr>
+        <th>Local</th>
+        <th>Visitante</th>
+        <th></th>
+        <th></th>
+    </tr>
+{% for item in partidos %}
+    <tr>
+        <td>{{ item.local.equipo  }}</td>
+        <td>{{ item.visitante.equipo  }}</td>
+        <td>{{ item.MarcadorLocal }}  </td>
+        <td>{{ item.MarcadorVisitante }} </td>
+    </tr>
+{% endfor %}
+</table>
+
+<a href="{{ path('clasificacion') }}">Clasificacion</a>
+<a href="{{ path('jornada') }}">Jornada</a>
+<a href="{{ path('actualizacion') }}">Backend</a>

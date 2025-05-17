@@ -1,0 +1,14 @@
+
+
+El numero que ha resultado premiado del dia {{fecha| date('m/d/Y')}} ha sido el numero {{numero_premiado}} con un premio de {{premio}} €.
+
+
+{% if premiado == true %}
+    <p>Enhorabuena su numero {{numero}} ha resultado premiado</p>
+{% else %}
+    <p>Lo lamentamos  su numero {{numero}} NO ha resulTado premiado</p>
+{% endif %}
+
+<a href="{{ path('sorteo_check') }}">Comprobar otro numero</a>
+
+
